@@ -1,0 +1,22 @@
+function bubleSorting(arr: number[]) {
+  const sortedArr = [...arr];
+  let nowSwap;
+
+  for (let i = sortedArr.length; i > 0; i--) {
+    for (let j = 0; j < i - 1; j++) {
+      if (sortedArr[j] > sortedArr[j + 1]) {
+        const temp = sortedArr[j];
+        sortedArr[j] = sortedArr[j + 1];
+        sortedArr[j + 1] = temp;
+        nowSwap = false;
+      }
+    }
+    if (nowSwap) break;
+  }
+  return sortedArr;
+}
+
+console.log(bubleSorting([2, 6, 11, 9, 15, 85, 0, 25, 8, 7, 1])); //[0, 1, 2, 6, 7, 8, 9, 11, 15, 25, 85]
+
+
+Time Complexity: O(n²);
